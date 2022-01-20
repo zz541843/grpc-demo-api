@@ -1,0 +1,6 @@
+{"level":"info","ts":1642683701.1438541,"caller":"shop-api/main.go:20","msg":"failed to fetch URL","url":"https://bilibili.com","attempt":3,"backoff":1}
+{"level":"info","ts":1642683701.1443672,"caller":"shop-api/main.go:26","msg":"Failed to fetch URL: https://bilibili.com"}
+{"level":"info","ts":1642684045.552056,"caller":"shop-api/main.go:21","msg":"failed to fetch URL","url":"https://bilibili.com","attempt":3,"backoff":1}
+{"level":"info","ts":1642684045.552056,"caller":"shop-api/main.go:27","msg":"Failed to fetch URL: https://bilibili.com"}
+{"level":"info","ts":1642684163.596677,"caller":"shop-api/main.go:22","msg":"failed to fetch URL","url":"https://bilibili.com","attempt":3,"backoff":1}
+{"level":"info","ts":1642684163.5976782,"caller":"shop-api/main.go:28","msg":"Failed to fetch URL: https://bilibili.com"}
