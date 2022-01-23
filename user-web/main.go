@@ -1,8 +1,11 @@
 package main
 
 import (
+	"fmt"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
+	"shop-api/user-web/global"
+	"shop-api/user-web/initialize"
 	//"shop-api/user-web/initialize"
 )
 
@@ -27,7 +30,6 @@ func Log() {
 	logger.Debug("asdf")
 	logger.Info("err")
 	logger.Warn("Warn", zap.String("aa", "bb"))
-
 }
 func SugarLog() {
 	proConfig := zap.NewDevelopmentConfig()
@@ -40,8 +42,27 @@ func SugarLog() {
 	sugarLogger.Infof("Success! statusCode = %s for URL %s", "sdf", "url")
 }
 func main() {
+	// 初始化Zap
+	initialize.InitLogger()
+	////2. 初始化配置文件
+	initialize.InitConfig()
+	//3. 初始化routers
+	Router := initialize.Routers()
+	//4. 初始化翻译和自定义验证
+	if err := initialize.InitValidator("zh"); err != nil {
+		panic(err)
+	}
+	//if err := Router.Run(fmt.Sprintf(":%d", 3001)); err != nil {
+	if err := Router.Run(fmt.Sprintf(":%d", global.ServerConfig.Port)); err != nil {
+		zap.S().Panic("启动失败:", err.Error())
+	}
+
+	// 初始化grpc连接
+	//initialize.InitSrvConn()
+
+	//time.Sleep(time.Second * 100)
 	//Log()
-	SugarLog()
+	//SugarLog()
 	////1. 初始化logger
 	//initialize.InitLogger()`
 	//

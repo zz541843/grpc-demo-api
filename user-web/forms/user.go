@@ -18,3 +18,8 @@ type UpdateUserForm struct {
 	Gender   string `form:"gender" json:"gender" binding:"required,oneof=female male"`
 	Birthday string `form:"birthday" json:"birthday" binding:"required,datetime=2006-01-02"`
 }
+
+type Login struct {
+	User     string `form:"user" json:"user" xml:"user"  binding:"required"`
+	Password string `form:"password" json:"password" xml:"password" binding:"required"`
+}

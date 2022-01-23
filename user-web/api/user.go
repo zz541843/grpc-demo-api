@@ -233,9 +233,9 @@ func Register(c *gin.Context) {
 
 	j := middlewares.NewJWT()
 	claims := models.CustomClaims{
-		ID:          uint(user.Id),
-		NickName:    user.NickName,
-		AuthorityId: uint(user.Role),
+		ID: uint(user.Id),
+		//NickName:    user.NickName,
+		//AuthorityId: uint(user.Role),
 		//StandardClaims: jwt.StandardClaims{
 		//	NotBefore: time.Now().Unix(),               //签名的生效时间
 		//	ExpiresAt: time.Now().Unix() + 60*60*24*30, //30天过期

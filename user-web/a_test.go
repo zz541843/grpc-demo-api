@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"testing"
+	"time"
 )
 import "github.com/golang-jwt/jwt"
 
@@ -48,5 +49,10 @@ func TestB(t *testing.T) {
 	} else {
 		fmt.Println(err)
 	}
+
+}
+
+func TestTIme(t *testing.T) {
+	fmt.Println(time.Now().Unix())
 
 }

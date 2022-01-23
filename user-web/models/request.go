@@ -1,12 +1,12 @@
 package models
 
 import (
-	"github.com/dgrijalva/jwt-go"
+	"github.com/golang-jwt/jwt"
 )
 
 type CustomClaims struct {
-	ID          uint
-	NickName    string
-	AuthorityId uint
+	ID       uint
+	Username string
+	Password string
 	jwt.StandardClaims
 }
